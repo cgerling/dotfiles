@@ -1,4 +1,10 @@
 #
+# General
+#
+alias dot='/usr/bin/git --fit-dir=$HOME/.dotfiles.git --work-tree=$HOME'
+
+
+#
 # Browser
 #
 
