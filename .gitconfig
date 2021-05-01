@@ -4,6 +4,8 @@
   p = push
   pb = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
   pf = push --force-with-lease
+[pull]
+  rebase = true
 [user]
   email = calvin@gerling.sh
   name = Calvin Gerling
