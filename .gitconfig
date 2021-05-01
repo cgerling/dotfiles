@@ -1,3 +1,9 @@
+[alias]
+  co = checkout
+  dc = diff --cached
+  p = push
+  pb = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
+  pf = push --force-with-lease
 [user]
   email = calvin@gerling.sh
   name = Calvin Gerling
