@@ -2,6 +2,7 @@
   co = checkout
   dc = diff --cached
   p = push
+  patch = !git --no-pager diff --no-color
   pb = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
   pf = push --force-with-lease
 [color]
