@@ -4,6 +4,25 @@
   p = push
   pb = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
   pf = push --force-with-lease
+[color]
+  ui = true
+[color "diff"]
+  commit = yellow bold
+  frag = magenta bold
+  func = 146 bold
+  meta = 11
+  new = green bold
+  old = red bold
+  whitespace = red reverse
+[color "diff-highlight"]
+  newHighlight = green bold 22
+  newNormal = green bold
+  oldHighlight = red bold 52
+  oldNormal = red bold
+[core]
+  pager = diff-so-fancy | less
+[interactive]
+  diffFilter = diff-so-fancy --patch
 [pull]
   rebase = true
 [user]
