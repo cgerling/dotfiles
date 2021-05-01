@@ -29,9 +29,25 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Prompt
 #
 
+# Options
+PURE_CMD_MAX_EXEC_TIME='60'
+PURE_PROMPT_SYMBOL='λ'
+
+# Colors
+zstyle ':prompt:pure:git:arrow' color '#bb55ff'
+zstyle ':prompt:pure:git:branch' color '#eeeeee'
+zstyle ':prompt:pure:git:branch:cached' color '#444444'
+zstyle ':prompt:pure:git:dirty' color '#fc5585' 
+zstyle ':prompt:pure:host' color '#0087d7'
+zstyle ':prompt:pure:path' color '#6c6c6c'
+zstyle ':prompt:pure:prompt:error' color '#fe5686'
+zstyle ':prompt:pure:prompt:success' color '#2fffdf'
+zstyle ':prompt:pure:user' color '#bcbcbc'
+zstyle ':prompt:pure:user:root' color '#fcd420'
+
 # Set the prompt theme to load.
 # Auto set to 'off' on dumb terminals.
-zstyle ':prezto:module:prompt' theme 'sorin'
+zstyle ':prezto:module:prompt' theme 'pure'
 
 # Set the working directory prompt display length.
 zstyle ':prezto:module:prompt' pwd-length 'short'
