@@ -21,7 +21,7 @@
   oldHighlight = red bold 52
   oldNormal = red bold
 [core]
-  pager = diff-so-fancy | less
+  pager = diff-so-fancy | less -RFX
 [interactive]
   diffFilter = diff-so-fancy --patch
 [pull]
