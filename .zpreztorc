@@ -31,7 +31,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Options
 PURE_CMD_MAX_EXEC_TIME='60'
-PURE_PROMPT_SYMBOL='λ'
+PURE_PROMPT_SYMBOL='λ »'
 
 # Colors
 zstyle ':prompt:pure:git:arrow' color '#bb55ff'
