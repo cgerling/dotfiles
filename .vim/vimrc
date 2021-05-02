@@ -61,6 +61,10 @@ augroup END
 set number relativenumber
 set scrolloff=50
 
+" Mouse
+set mouse=
+set mousehide
+
 " Search
 set incsearch
 set hlsearch
