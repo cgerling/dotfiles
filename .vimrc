@@ -28,6 +28,14 @@ Plug 'mhinz/vim-mix-format', {'for': 'elixir'}
 
 call plug#end()
 
+" Configuration
+
+" vim-picker
+nnoremap <C-p> :PickerEdit<CR>
+nnoremap <C-p>h :PickerSplit<CR>
+nnoremap <C-p>t :PickerTabedit<CR>
+nnoremap <C-p>v :PickerVsplit<CR>
+
 "
 " Editing
 "
