@@ -18,6 +18,14 @@ endif
 " Plugins
 call plug#begin(data_dir . '/plugs')
 
+Plug 'prabirshrestha/async.vim'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-endwise'
+Plug 'srstevenson/vim-picker'
+Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
+Plug 'mhinz/vim-mix-format', {'for': 'elixir'}
+
 call plug#end()
 
 "
