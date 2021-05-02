@@ -62,6 +62,7 @@ set number relativenumber
 set scrolloff=50
 
 " Search
+set incsearch
 set hlsearch
 nnoremap <CR> :noh<CR>
 
