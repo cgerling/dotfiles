@@ -1,3 +1,3 @@
-[submodule "/home/cgerling/.zprezto"]
-	path = /home/cgerling/.zprezto
+[submodule "/home/cgerling/.config/zsh/prezto"]
+	path = /home/cgerling/.config/zsh/prezto
 	url = git@github.com:sorin-ionescu/prezto.git
