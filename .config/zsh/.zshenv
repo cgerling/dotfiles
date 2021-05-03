@@ -20,6 +20,9 @@ export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
 
+# Vim
+export VIMINIT="source $HOME/.config/vim/vimrc"
+
 #
 # Language
 #

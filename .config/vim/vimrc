@@ -4,19 +4,25 @@
 set encoding=utf-8
 set nocompatible
 
+" Paths
+let vim_dir=$HOME.'/.config/vim'
+let &backupdir=vim_dir.'/backup//'
+let &directory=vim_dir.'/swap//'
+let &runtimepath.=','.vim_dir.','.vim_dir.'/after'
+let &viminfo.=',n'.vim_dir.'/.viminfo'
+
 "
 " Plug
 "
 
 " Setup
-let data_dir = '~/.vim'
-if empty(glob(data_dir . '/autoload/plug.vim'))
+if empty(glob(vim_dir.'/autoload/plug.vim'))
   silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 " Plugins
-call plug#begin(data_dir . '/plugs')
+call plug#begin(vim_dir . '/plugs')
 
 Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
 Plug 'mhinz/vim-mix-format', {'for': 'elixir'}
@@ -28,13 +34,12 @@ Plug 'tpope/vim-surround'
 
 call plug#end()
 
-" Configuration
-
 " vim-picker
 nnoremap <C-p> :PickerEdit<CR>
 nnoremap <C-p>h :PickerSplit<CR>
 nnoremap <C-p>t :PickerTabedit<CR>
 nnoremap <C-p>v :PickerVsplit<CR>
+
 
 "
 " Editing
@@ -44,6 +49,7 @@ set clipboard=unnamed
 set ruler
 set showmatch
 set showmode
+set undodir=~/.config/vim/undo//
 syntax on
 
 " Autosave
