@@ -1,3 +1,13 @@
 .dotfiles.git/
-.zhistory
+
+# Vim
+**/vim/.netrwhist
+**/vim/autoload/
+**/vim/backup/
+**/vim/plugs/
+**/vim/swap/
+**/vim/viminfo
+
+# Zsh
+**/zsh/.zhistory
 
