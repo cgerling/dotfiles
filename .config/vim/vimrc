@@ -27,6 +27,7 @@ call plug#begin(vim_dir . '/plugs')
 Plug 'elixir-editors/vim-elixir', {'for': 'elixir'}
 Plug 'mhartington/oceanic-next'
 Plug 'mhinz/vim-mix-format', {'for': 'elixir'}
+Plug 'mileszs/ack.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'srstevenson/vim-picker'
 Plug 'tpope/vim-endwise'
@@ -34,6 +35,10 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 call plug#end()
+
+" ack.vim
+let g:ackprg = 'ag --vimgrep'
+nnoremap <C-f> :Ack!<Space>
 
 " vim-picker
 nnoremap <C-p> :PickerEdit<CR>
