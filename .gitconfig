@@ -1,4 +1,5 @@
 [alias]
+  cb = "!f() { git remote prune origin && git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d; }; f"
   co = checkout
   d = diff
   dc = diff --cached
