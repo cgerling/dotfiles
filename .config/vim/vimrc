@@ -10,6 +10,7 @@ let &backupdir=vim_dir.'/backup//'
 let &directory=vim_dir.'/swap//'
 let &runtimepath.=','.vim_dir.','.vim_dir.'/after'
 let &viminfo.=',n'.vim_dir.'/.viminfo'
+let g:netrw_home=vim_dir
 
 "
 " Plug
