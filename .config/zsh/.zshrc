@@ -11,5 +11,6 @@ fi
 #
 # Aliases
 #
+alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
 alias uuid='uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n" | pbcopy'
 
