@@ -1,18 +1,32 @@
 #!/bin/sh
 
-local dotfiles_path="$HOME/.dotfiles.git"
-git clone --bare git@github.com:cgerling/dotfiles.git "$dotfiles_path"
-function dot {
-   /usr/bin/git --git-dir="$dotfiles_path" --work-tree=$HOME $@
-}
-mkdir -p .config-backup
-dot checkout
-if [ $? = 0 ]; then
-  echo "Checked out config.";
-  else
-    echo "Deleting conflicting files";
-    dot checkout 2>&1 | egrep "\s+\." | awk {'print &1'} | xargs -I{} rm -f {}
-fi;
-dot checkout
-dot config status.showUntrackedFiles no
+function install-dotfiles_cmd {
+  local dotfiles_repository="git@github.com:cgerling/dotfiles.git"
+  local dotfiles_path="$HOME/.dotfiles.git"
 
+  function dot {
+     /usr/bin/git --git-dir="$dotfiles_path" --work-tree=$HOME $@
+  }
+
+  function install-dotfiles_run {
+    git clone --bare "$dotfiles_repository" "$dotfiles_path"
+
+    mkdir -p .config-backup
+
+    dot checkout
+
+    if [ $? = 0 ]; then
+      echo "Checked out config.";
+    else
+      echo "Deleting conflicting files";
+      dot checkout 2>&1 | egrep "\s+\." | awk {'print &1'} | xargs -I{} rm -f {}
+    fi;
+
+    dot checkout
+    dot config status.showUntrackedFiles no
+  }
+
+  install-dotfiles_run $@
+}
+
+install-dotfiles_cmd $@
