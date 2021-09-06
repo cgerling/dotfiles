@@ -1,0 +1,5 @@
+key_bindings:
+  # Cmd+K triggers Ctrl+S Ctrl+K (tmux keybind)
+  - { key: K, mods: Command, chars: "\x13\x0b" }
+  # Cmd+P triggers Ctrl+S Ctrl+P (tmux keybind)
+  - { key: P, mods: Command, chars: "\x13\x10" }
