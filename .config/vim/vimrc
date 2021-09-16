@@ -12,6 +12,14 @@ let &runtimepath.=','.vim_dir.','.vim_dir.'/after'
 let &viminfo.=',n'.vim_dir.'/.viminfo'
 let g:netrw_home=vim_dir
 
+if empty(glob(vim_dir.'/backup'))
+  silent execute '!mkdir '.vim_dir.'/backup'
+endif
+
+if empty(glob(vim_dir.'/swap'))
+  silent execute '!mkdir '.vim_dir.'/swap'
+endif
+
 "
 " Plug
 "
