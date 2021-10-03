@@ -45,6 +45,7 @@ typeset -gU cdpath fpath mailpath path
 # Set the list of directories that Zsh searches for programs.
 path=(
   /home/cgerling/.local/bin
+  /Users/cgerling/.local/bin
   /usr/local/{bin,sbin}
   $path
 )
