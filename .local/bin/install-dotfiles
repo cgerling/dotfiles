@@ -1,6 +1,6 @@
 #!/bin/sh
 
-function install-dotfiles_cmd {
+function install_dotfiles_cmd {
   local dotfiles_repository="git@github.com:cgerling/dotfiles.git"
   local dotfiles_path="$HOME/.dotfiles.git"
 
@@ -8,8 +8,12 @@ function install-dotfiles_cmd {
      /usr/bin/git --git-dir="$dotfiles_path" --work-tree=$HOME $@
   }
 
-  function install-dotfiles_run {
-    git clone --bare "$dotfiles_repository" "$dotfiles_path"
+  function install_dotfiles_run {
+    if [ -d "$dotfiles_path" ]; then
+      echo "$dotfiles_path already exists, skipping clone step.";
+    else
+      git clone --bare "$dotfiles_repository" "$dotfiles_path"
+    fi
 
     mkdir -p .config-backup
 
@@ -26,7 +30,7 @@ function install-dotfiles_cmd {
     dot config status.showUntrackedFiles no
   }
 
-  install-dotfiles_run $@
+  install_dotfiles_run $@
 }
 
-install-dotfiles_cmd $@
+install_dotfiles_cmd $@
