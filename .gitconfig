@@ -28,6 +28,8 @@
   newNormal = green bold
   oldHighlight = red bold 52
   oldNormal = red bold
+[commit]
+  gpgsign = true
 [core]
   pager = diff-so-fancy | less -RFX
 [interactive]
