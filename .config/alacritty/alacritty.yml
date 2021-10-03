@@ -1,3 +1,6 @@
+import:
+  - .config/alacritty/colors.yml
+
 key_bindings:
   # Cmd+K triggers Ctrl+S Ctrl+K (tmux keybind)
   - { key: K, mods: Command, chars: "\x13\x0b" }
