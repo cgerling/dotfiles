@@ -27,6 +27,10 @@ function install_dotfiles_cmd {
     fi;
 
     dot checkout
+
+    echo "Initializing submodules...";
+    dot submodule update --init --recursive
+
     dot config status.showUntrackedFiles no
   }
 
