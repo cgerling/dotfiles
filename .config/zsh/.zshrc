@@ -8,6 +8,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/prezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/prezto/init.zsh"
 fi
 
+# Source ASDF
+. $(brew --prefix asdf)/libexec/asdf.sh
+
 #
 # Aliases
 #
