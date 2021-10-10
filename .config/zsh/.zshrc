@@ -8,8 +8,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/prezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/prezto/init.zsh"
 fi
 
-# Source ASDF
-. $(brew --prefix asdf)/libexec/asdf.sh
+# Source ASDF (macOS)
+if [[ "$OSTYPE" == darwin* ]]; then
+  source "$(brew --prefix asdf)/libexec/asdf.sh"
+fi
 
 #
 # Aliases
