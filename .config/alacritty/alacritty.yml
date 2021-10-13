@@ -45,6 +45,9 @@ colors:
     cyan:       *color7
     white:      *color8
 
+font:
+  size: 12.0
+
 key_bindings:
   # Cmd+K triggers Ctrl+S Ctrl+K (tmux keybind)
   - { key: K, mods: Command, chars: "\x13\x0b" }
