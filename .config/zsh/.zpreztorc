@@ -34,16 +34,16 @@ PURE_CMD_MAX_EXEC_TIME='60'
 PURE_PROMPT_SYMBOL='λ »'
 
 # Colors
-zstyle ':prompt:pure:git:arrow' color 13
-zstyle ':prompt:pure:git:branch' color 6
-zstyle ':prompt:pure:git:branch:cached' color 2
-zstyle ':prompt:pure:git:dirty' color 11
-zstyle ':prompt:pure:host' color 14
-zstyle ':prompt:pure:path' color 3
+zstyle ':prompt:pure:git:arrow' color 14
+zstyle ':prompt:pure:git:branch' color 15
+zstyle ':prompt:pure:git:branch:cached' color 3
+zstyle ':prompt:pure:git:dirty' color 3
+zstyle ':prompt:pure:host' color 7
+zstyle ':prompt:pure:path' color 8
 zstyle ':prompt:pure:prompt:error' color 9
 zstyle ':prompt:pure:prompt:success' color 10
-zstyle ':prompt:pure:user' color 15
-zstyle ':prompt:pure:user:root' color 9
+zstyle ':prompt:pure:user' color 4
+zstyle ':prompt:pure:user:root' color 7
 
 # Set the prompt theme to load.
 # Auto set to 'off' on dumb terminals.
