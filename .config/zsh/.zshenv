@@ -51,6 +51,11 @@ path=(
 )
 
 #
+# Man
+#
+export MANPAGER='less -s -M +Gg'
+
+#
 # Less
 #
 
