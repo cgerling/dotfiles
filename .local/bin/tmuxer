@@ -19,7 +19,7 @@ function tmuxer_cmd {
   }
 
   function run_cmd {
-    session_path=${1-$PWD}
+    session_path="$(realpath ${1-$PWD})"
     session_name="$(basename $session_path | tr . -)"
 
     if ! $(tmux_session_exists "$session_name"); then
