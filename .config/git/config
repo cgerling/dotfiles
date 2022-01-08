@@ -36,6 +36,7 @@
   program = gpg
 [init]
   defaultBranch = main
+  templateDir = ~/.config/git/templates
 [interactive]
   diffFilter = diff-so-fancy --patch
 [pull]
