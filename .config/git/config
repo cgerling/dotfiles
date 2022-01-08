@@ -32,6 +32,8 @@
   gpgsign = true
 [core]
   pager = diff-so-fancy | less -RFX
+[gpg]
+  program = gpg
 [interactive]
   diffFilter = diff-so-fancy --patch
 [pull]
