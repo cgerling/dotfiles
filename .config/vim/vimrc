@@ -7,6 +7,7 @@ set nocompatible
 " Paths
 let vim_dir=$HOME.'/.config/vim'
 let &backupdir=vim_dir.'/backup//'
+let &viewdir=vim_dir.'/view//'
 let &directory=vim_dir.'/swap//'
 let &runtimepath.=','.vim_dir.','.vim_dir.'/after'
 let &viminfo.=',n'.vim_dir.'/.viminfo'
