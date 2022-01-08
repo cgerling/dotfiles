@@ -1,0 +1,35 @@
+#!/bin/sh
+
+set -e
+
+function pre_commit_cmd() {
+  function run_command() {
+    local command=$1
+
+    echo "> $command"
+    $command
+  }
+
+  function elixir_hooks() {
+    if mix &> /dev/null ; then
+      run_command "mix compile --all-warnings --warnings-as-errors"
+
+      run_command "mix format --check-formatted"
+
+      run_command "mix test"
+
+      MIX_TASKS=$(mix help | awk '{print $2}')
+      if [[ $MIX_TASKS =~ "credo" ]]; then
+        run_command "mix credo"
+      fi
+
+      if [[ $MIX_TASKS =~ "dialyzer" ]]; then
+        run_command "mix dialyzer"
+      fi
+    fi
+  }
+
+  elixir_hooks
+}
+
+pre_commit_cmd
