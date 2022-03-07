@@ -28,6 +28,13 @@
   newNormal = green bold
   oldHighlight = red bold 52
   oldNormal = red bold
+[color "status"]
+  added = green
+  branch = brightwhite bold
+  changed = yellow
+  header = white
+  untracked = brightblack
+  unmerged = red
 [commit]
   gpgsign = true
 [core]
