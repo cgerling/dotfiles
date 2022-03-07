@@ -1,49 +1,53 @@
-theme_colors:
-  base1:  &base1 '#1b2b34'
-  base2:  &base2 '#343d46'
-  base3:  &base3 '#4f5b66'
-  base4:  &base4 '#65737e'
-  base5:  &base5 '#a7adba'
-  base6:  &base6 '#c0c5ce'
-  base7:  &base7 '#cdd3de'
-  base8:  &base8 '#d8dee9'
-  color1: &color1 '#ab7967'
-  color2: &color2 '#f99157'
-  color3: &color3 '#99C794'
-  color4: &color4 '#FAC863'
-  color5: &color5 '#6699cc'
-  color6: &color6 '#c594c5'
-  color7: &color7 '#5fb3b3'
-  color8: &color8 '#ffffff'
+theme:
+  color0:  &color0  '#1b2b34'
+  color1:  &color1  '#343d46'
+  color2:  &color2  '#4f5b66'
+  color3:  &color3  '#65737e'
+  color4:  &color4  '#a7adba'
+  color5:  &color5  '#c0c5ce'
+  color6:  &color6  '#cdd3de'
+  color7:  &color7  '#d8dee9'
+  color8:  &color8  '#ab7967'
+  color9:  &color9  '#f99157'
+  color10: &color10 '#99C794'
+  color11: &color11 '#FAC863'
+  color12: &color12 '#6699cc'
+  color13: &color13 '#c594c5'
+  color14: &color14 '#5fb3b3'
+  color15: &color15 '#ffffff'
 
 colors:
   primary:
-    background: *base1
-    foreground: *color8
+    background: *color0
+    foreground: *color15
 
   cursor:
-    text:       *base1
-    cursor:     *color8
+    text: CellBackground
+    cursor: *color15
+
+  selection:
+    background: CellForeground
+    text: *color15
 
   normal:
-    black:      *base1
-    red:        *base2
-    green:      *base3
-    yellow:     *base4
-    blue:       *base5
-    magenta:    *base6
-    cyan:       *base7
-    white:      *base8
+    black:    *color0
+    red:      *color1
+    green:    *color2
+    yellow:   *color3
+    blue:     *color4
+    magenta:  *color5
+    cyan:     *color6
+    white:    *color7
 
   bright:
-    black:      *color1
-    red:        *color2
-    green:      *color3
-    yellow:     *color4
-    blue:       *color5
-    magenta:    *color6
-    cyan:       *color7
-    white:      *color8
+    black:    *color8
+    red:      *color9
+    green:    *color10
+    yellow:   *color11
+    blue:     *color12
+    magenta:  *color13
+    cyan:     *color14
+    white:    *color15
 
 font:
   size: 12.0
