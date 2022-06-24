@@ -29,7 +29,15 @@ function pre_commit_cmd() {
     fi
   }
 
-  elixir_hooks
+  function run_hooks() {
+    elixir_hooks
+  }
+
+  BRANCH_NAME=$(git branch | grep '*' | sed 's/* //')
+
+  if [ $BRANCH_NAME != '(no branch)' ]; then
+    run_hooks
+  fi
 }
 
 pre_commit_cmd
