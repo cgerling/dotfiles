@@ -52,3 +52,5 @@
   email = calvin@gerling.sh
   name = Calvin Gerling
   signingkey = 5E5682F5
+[add "interactive"]
+  useBuiltin = false
