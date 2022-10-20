@@ -27,7 +27,7 @@ colors:
 
   selection:
     background: CellForeground
-    text: *color15
+    text: *color0
 
   normal:
     black:    *color0
