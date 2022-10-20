@@ -15,6 +15,7 @@ theme:
   color13: &color13 '#FF5C8F' # bright magenta
   color14: &color14 '#2BE4D0' # bright cyan
   color15: &color15 '#E6E6E6' # bright white
+  font-family: &font-family 'DM Mono'
 
 colors:
   primary:
@@ -51,19 +52,19 @@ colors:
 
 font:
   normal:
-    family: 'DM Mono'
+    family: *font-family
     style: Regular
 
   bold:
-    family: 'DM Mono'
+    family: *font-family
     style: Bold
 
   italic:
-    family: 'DM Mono'
+    family: *font-family
     style: Italic
 
   bold_italic:
-    family: 'DM Mono'
+    family: *font-family
     style: Bold Italic
 
   size: 12.0
