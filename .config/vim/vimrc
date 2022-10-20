@@ -53,7 +53,7 @@ nnoremap <C-f> :Ack!<Space>
 " vim-picker
 nnoremap <C-p> :PickerEdit<CR>
 nnoremap <C-p>h :PickerSplit<CR>
-nnoremap <C-p>t :PickerTabedit<CR>
+nnoremap <C-p>t :PickerTabdrop<CR>
 nnoremap <C-p>v :PickerVsplit<CR>
 
 "
