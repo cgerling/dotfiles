@@ -2,14 +2,14 @@
 
 PID=$$
 
-function run_command() {
+run_command() {
   local command=$1
 
   echo "> $command"
   $command || clean_up
 }
 
-function elixir_hooks() {
+elixir_hooks() {
   local mix_file="$(git rev-parse --show-toplevel)/mix.exs"
   if [ -f $mix_file ]; then
     run_command "mix compile --all-warnings --warnings-as-errors"
@@ -29,19 +29,19 @@ function elixir_hooks() {
   fi
 }
 
-function stash_changes() {
+stash_changes() {
   git stash push --keep-index . &> /dev/null
 }
 
-function run_hooks() {
+run_hooks() {
   elixir_hooks
 }
 
-function restore_changes() {
+restore_changes() {
   git stash pop --index 0 &> /dev/null
 }
 
-function clean_up() {
+clean_up() {
   local status_code=$?
 
   restore_changes
