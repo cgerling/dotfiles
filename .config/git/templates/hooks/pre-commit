@@ -1,43 +1,61 @@
 #!/bin/sh
 
-set -e
+PID=$$
 
-function pre_commit_cmd() {
-  function run_command() {
-    local command=$1
+function run_command() {
+  local command=$1
 
-    echo "> $command"
-    $command
-  }
+  echo "> $command"
+  $command || clean_up
+}
 
-  function elixir_hooks() {
-    if mix &> /dev/null ; then
-      run_command "mix compile --all-warnings --warnings-as-errors"
+function elixir_hooks() {
+  local mix_file="$(git rev-parse --show-toplevel)/mix.exs"
+  if [ -f $mix_file ]; then
+    run_command "mix compile --all-warnings --warnings-as-errors"
 
-      run_command "mix format --check-formatted"
+    run_command "mix format --check-formatted"
 
-      run_command "mix test"
+    run_command "mix test"
 
-      MIX_TASKS=$(mix help | awk '{print $2}')
-      if [[ $MIX_TASKS =~ "credo" ]]; then
-        run_command "mix credo"
-      fi
-
-      if [[ $MIX_TASKS =~ "dialyzer" ]]; then
-        run_command "mix dialyzer"
-      fi
+    MIX_TASKS=$(mix help | awk '{print $2}')
+    if [[ $MIX_TASKS =~ "credo" ]]; then
+      run_command "mix credo"
     fi
-  }
 
-  function run_hooks() {
-    elixir_hooks
-  }
-
-  BRANCH_NAME=$(git branch | grep '*' | sed 's/* //')
-
-  if [ $BRANCH_NAME != '(no branch)' ]; then
-    run_hooks
+    if [[ $MIX_TASKS =~ "dialyzer" ]]; then
+      run_command "mix dialyzer"
+    fi
   fi
 }
 
-pre_commit_cmd
+function stash_changes() {
+  git stash push --keep-index . &> /dev/null
+}
+
+function run_hooks() {
+  elixir_hooks
+}
+
+function restore_changes() {
+  git stash pop --index 0 &> /dev/null
+}
+
+function clean_up() {
+  local status_code=$?
+
+  restore_changes
+
+  exit $status_code
+}
+
+BRANCH_NAME=$(git branch | grep '*' | sed 's/* //')
+if [ $BRANCH_NAME != '(no branch)' ]; then
+  trap clean_up SIGINT
+
+  stash_changes
+
+  run_hooks
+
+  restore_changes
+fi
