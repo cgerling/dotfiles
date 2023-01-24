@@ -1,18 +1,20 @@
-[alias]
-  cb = "!f() { git remote prune origin && git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d; }; f"
-  co = checkout
-  cs = "!f() { \
-            TASK_ID=$(cut -d'/' -f1 <<< $(git rev-parse --abbrev-ref HEAD)); \
-            EDITOR=vim; \
-            COMMIT_MESSAGE="[${TASK_ID}]"; \
-            git commit -e -m "\"${COMMIT_MESSAGE}\""; \
-        }; f"
-  d = diff
-  dc = diff --cached
-  p = push
-  patch = !git --no-pager diff --no-color
-  pb = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
-  pf = push --force-with-lease
+[init]
+  defaultBranch = main
+  templateDir = ~/.config/git/templates
+[user]
+  email = calvin@gerling.sh
+  name = Calvin Gerling
+
+# Color Theme
+[color "status"]
+  added = green
+  branch = brightwhite bold
+  changed = yellow
+  header = white
+  untracked = brightblack
+  unmerged = red
+
+# Diff So Fancy
 [color]
   ui = true
 [color "diff"]
@@ -28,29 +30,37 @@
   newNormal = green bold
   oldHighlight = red bold 52
   oldNormal = red bold
-[color "status"]
-  added = green
-  branch = brightwhite bold
-  changed = yellow
-  header = white
-  untracked = brightblack
-  unmerged = red
-[commit]
-  gpgsign = true
 [core]
   pager = diff-so-fancy | less -RFX
-[gpg]
-  program = gpg
-[init]
-  defaultBranch = main
-  templateDir = ~/.config/git/templates
 [interactive]
   diffFilter = diff-so-fancy --patch
-[pull]
-  rebase = true
-[user]
-  email = calvin@gerling.sh
-  name = Calvin Gerling
-  signingkey = 5E5682F5
+
+# Commands
+[alias]
+  cb = "!f() { git remote prune origin && git branch -vv | grep 'origin/.*: gone]' | awk '{print $1}' | xargs git branch -d; }; f"
+  co = checkout
+  cs = "!f() { \
+            TASK_ID=$(cut -d'/' -f1 <<< $(git rev-parse --abbrev-ref HEAD)); \
+            EDITOR=vim; \
+            COMMIT_MESSAGE="[${TASK_ID}]"; \
+            git commit -e -m "\"${COMMIT_MESSAGE}\""; \
+        }; f"
+  d = diff
+  dc = diff --cached
+  p = push
+  patch = !git --no-pager diff --no-color
+  pb = "!f() { git push -u origin $(git rev-parse --abbrev-ref HEAD); }; f"
+  pf = push --force-with-lease
+
 [add "interactive"]
   useBuiltin = false
+[pull]
+  rebase = true
+
+# Signing
+[commit]
+  gpgsign = true
+[gpg]
+  program = gpg
+[user]
+  signingkey = 5E5682F5
