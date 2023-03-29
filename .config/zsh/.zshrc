@@ -24,6 +24,7 @@ alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
 alias uuid='uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n" | pbcopy'
 
 alias iex='iex --erl "-kernel shell_history enabled"'
+alias mc='mix compile --all-warnings --warnings-as-errors'
 alias mt='mix test'
 alias mtf='mix test --failed'
 alias mtw='mix test --only wip'
