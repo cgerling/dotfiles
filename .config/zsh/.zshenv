@@ -43,6 +43,13 @@ typeset -gU cdpath fpath mailpath path
 # )
 
 #
+# SSH
+#
+if [[ "$OSTYPE" == linux* ]]; then
+  export SSH_AUTH_SOCK="/home/cgerling/.ssh/ssh-agent.socket"
+fi
+
+#
 # Man
 #
 export MANPAGER='less -s -M +Gg'

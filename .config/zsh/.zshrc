@@ -13,6 +13,10 @@ if [[ "$OSTYPE" == darwin* ]]; then
   source "$(brew --prefix asdf)/libexec/asdf.sh"
 fi
 
+if [[ "$OSTYPE" == linux* ]]; then
+  source /opt/asdf-vm/asdf.sh
+fi
+
 #
 # Aliases
 #
