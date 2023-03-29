@@ -81,7 +81,6 @@ augroup autoswitch_number_relativenumber
   autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 augroup END
 set number relativenumber
-set scrolloff=50
 
 " Mouse
 set mouse=
