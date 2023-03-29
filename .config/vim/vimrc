@@ -116,3 +116,5 @@ let g:netrw_banner = 0
 " tmux
 autocmd VimResized * :wincmd =
 
+" Elixir
+let g:mix_format_options = ""
