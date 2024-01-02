@@ -15,6 +15,9 @@ elif [[ "$OSTYPE" == linux* ]]; then
   source /opt/asdf-vm/asdf.sh
 fi
 
+# direnv
+eval "$(direnv hook $SHELL)"
+
 #
 # Aliases
 #
