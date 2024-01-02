@@ -1,0 +1,84 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+# color 8
+black = "#838281"
+# color 12
+blue = "#68A8E4"
+# color 14
+cyan = "#2BE4D0"
+# color 10
+green = "#98BC37"
+# color 13
+magenta = "#FF5C8F"
+# color 9
+red = "#F75341"
+# color 15
+white = "#E6E6E6"
+# color 11
+yellow = "#FED06E"
+
+[colors.cursor]
+# color 15
+cursor = "#E6E6E6"
+text = "CellBackground"
+
+[colors.normal]
+# color 0
+black = "#1D1D1D"
+# color 4
+blue = "#2C78BF"
+# color 6
+cyan = "#0BC1C7"
+# color 2
+green = "#519F50"
+# color 5
+magenta = "#E02C6D"
+# color 1
+red = "#EF2F27"
+# color 7
+white = "#CECCCA"
+# color 3
+yellow = "#FBB829"
+
+[colors.primary]
+# color 0
+background = "#1D1D1D"
+# color 15
+foreground = "#E6E6E6"
+
+[colors.selection]
+background = "CellForeground"
+# color 0
+text = "#1D1D1D"
+
+[font]
+size = 12.0
+
+[font.bold]
+family = "DM Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "DM Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "DM Mono"
+style = "Italic"
+
+[font.normal]
+family = "DM Mono"
+style = "Regular"
+
+[[keyboard.bindings]]
+chars = "\u0013\u000B"
+key = "K"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0013\u0010"
+key = "P"
+mods = "Command"
+
