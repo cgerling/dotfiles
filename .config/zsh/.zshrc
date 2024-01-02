@@ -11,9 +11,7 @@ fi
 # Source ASDF (macOS)
 if [[ "$OSTYPE" == darwin* ]]; then
   source "$(brew --prefix asdf)/libexec/asdf.sh"
-fi
-
-if [[ "$OSTYPE" == linux* ]]; then
+elif [[ "$OSTYPE" == linux* ]]; then
   source /opt/asdf-vm/asdf.sh
 fi
 
