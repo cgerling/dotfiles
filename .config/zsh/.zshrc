@@ -9,19 +9,23 @@ if [[ -s "${ZDOTDIR:-$HOME}/prezto/init.zsh" ]]; then
 fi
 
 # Source ASDF (macOS)
-if [[ "$OSTYPE" == darwin* ]]; then
-  source "$(brew --prefix asdf)/libexec/asdf.sh"
-elif [[ "$OSTYPE" == linux* ]]; then
-  source /opt/asdf-vm/asdf.sh
+if [[ -x "$(command -v asdf)" ]]; then
+  if [[ "$OSTYPE" == darwin* ]]; then
+    source "$(brew --prefix asdf)/libexec/asdf.sh"
+  elif [[ "$OSTYPE" == linux* ]]; then
+    source /opt/asdf-vm/asdf.sh
+  fi
 fi
 
 # direnv
-eval "$(direnv hook $SHELL)"
+if [[ -x "$(command -v direnv)" ]]; then
+  eval "$(direnv hook $SHELL)"
+fi
 
 #
 # Aliases
 #
-alias dot='/usr/bin/git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
+alias dot='git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME'
 alias uuid='uuidgen | tr "[:upper:]" "[:lower:]" | tr -d "\n" | pbcopy'
 
 alias iex='iex --erl "-kernel shell_history enabled"'
@@ -38,7 +42,7 @@ function start_tmux {
 
   function start_tmux_run {
     if not_inside_tmux; then
-      tmuxer
+      ~/.local/bin/tmuxer
     fi
   }
 

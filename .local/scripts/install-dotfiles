@@ -1,11 +1,11 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 function install_dotfiles_cmd {
   local dotfiles_repository="git@github.com:cgerling/dotfiles.git"
   local dotfiles_path="$HOME/.dotfiles.git"
 
   function dot {
-     /usr/bin/git --git-dir="$dotfiles_path" --work-tree=$HOME $@
+     git --git-dir="$dotfiles_path" --work-tree=$HOME $@
   }
 
   function install_dotfiles_run {
