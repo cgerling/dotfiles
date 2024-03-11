@@ -34,6 +34,10 @@ alias mt='mix test'
 alias mtf='mix test --failed'
 alias mtw='mix test --only wip'
 
+if [[ -x "$(command -v brew)" ]]; then
+  alias brew='HOMEBREW_ARTIFACT_DOMAIN="https://$(op --account thescore.1password.com read -fn op://Private/Artifactory/hostname)/artifactory/homebrew" HOMEBREW_DOCKER_REGISTRY_TOKEN="$(op --account thescore.1password.com read -fn op://Private/Artifactory/credential)" brew'
+fi
+
 #
 # Tmux
 #
